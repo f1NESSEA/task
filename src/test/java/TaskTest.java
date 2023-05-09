@@ -24,7 +24,7 @@ public class TaskTest {
 
     @Test
     public void shouldFindMatchingTasksEpicInOneSubtask() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(2, subtasks);
 
         epic.matches("Хлеб");
@@ -34,9 +34,10 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindDifferentTasksEpicInOneSubtask() {
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(2, subtasks);
 
         epic.matches("Сыр");
@@ -46,9 +47,10 @@ public class TaskTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMatchingTasksEpicInTwoSubtasks() {
-        String[] subtasks = { "Сыр свежий", "Яйца", "Хлеб свежий" };
+        String[] subtasks = {"Сыр свежий", "Яйца", "Хлеб свежий"};
         Epic epic = new Epic(2, subtasks);
 
         epic.matches("свежий");

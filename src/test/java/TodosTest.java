@@ -71,6 +71,7 @@ public class TodosTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMatchingTasksMeetingIfProject() {
         Meeting meeting = new Meeting(
@@ -87,6 +88,7 @@ public class TodosTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindDifferentTasksMeetingIfProject() {
         Meeting meeting = new Meeting(
@@ -103,11 +105,12 @@ public class TodosTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotFindId() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(5, subtasks);
 
         Meeting meeting = new Meeting(
@@ -122,15 +125,18 @@ public class TodosTest {
         meeting.matches("5");
 
         boolean expected = false;
-        boolean actual = simpleTask.matches("5"); epic.matches("5"); meeting.matches("5");
+        boolean actual = simpleTask.matches("5");
+        epic.matches("5");
+        meeting.matches("5");
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchMatchingTask() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -150,11 +156,12 @@ public class TodosTest {
         Task[] actual = todos.search("Позвонить");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldSearchMatchingTasksIfTwo() {
         SimpleTask simpleTask = new SimpleTask(5, "Купить сыр");
 
-        String[] subtasks = { "сыр", "яйца", "хлеб" };
+        String[] subtasks = {"сыр", "яйца", "хлеб"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(
@@ -174,11 +181,12 @@ public class TodosTest {
         Task[] actual = todos.search("сыр");
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSearchDifferentTask() {
         SimpleTask simpleTask = new SimpleTask(5, "Позвонить родителям");
 
-        String[] subtasks = { "Молоко", "Яйца", "Хлеб" };
+        String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
         Meeting meeting = new Meeting(

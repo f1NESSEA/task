@@ -1,9 +1,9 @@
 public class Epic extends Task {
-    private String[] subtasks;
+    protected String[] subtasks;
 
     public Epic(int id, String[] subtasks) {
-        super(id);
-        this.subtasks = subtasks;
+        super(id); // вызов родительского конструктора
+        this.subtasks = subtasks; // заполнение своих полей
     }
 
     public String[] getSubtasks() {
@@ -14,6 +14,7 @@ public class Epic extends Task {
     public boolean matches(String query) {
         for (String subtasks : subtasks) {
             if (subtasks.contains(query)) {
+                return true;
             }
         }
         return false;

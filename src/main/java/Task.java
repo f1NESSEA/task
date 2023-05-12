@@ -1,4 +1,3 @@
-
 import java.util.Objects;
 
 public class Task {
@@ -38,4 +37,5 @@ public class Task {
     public boolean matches(String query) {
         return false;
     }
+
 }
